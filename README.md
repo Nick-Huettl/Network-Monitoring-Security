@@ -84,6 +84,83 @@ After creating the rules, I generated test traffic from the Windows 11 client to
 
 <img width="1299" height="851" alt="Screenshot 2026-03-31 131102" src="https://github.com/user-attachments/assets/d781333c-c6c7-4a23-900e-88df59768a8c" />
 
+### Capturing & Analyzing Packets with Wireshark
+
+To validate IDS alerts and better understand network traffic, I captured packets on the Windows 11 client interface to analyze the traffic generated for each IDS rule in place.
+
+#### ICMP Traffic
+
+I generated ICMP traffic by pinging the Suricata VM from the Windows 11 client. The packets captured confirmed the requests and replies between the two hosts.
+
+The packets included:
+- ICMP protocol identification
+- Source and destination IPs
+- Request and reply type
+
+<img width="1114" height="826" alt="Screenshot 2026-04-02 131646" src="https://github.com/user-attachments/assets/179a8c8c-0927-47bc-9fb6-76180af4dec6" />
+
+<img width="1282" height="835" alt="Screenshot 2026-04-02 131804" src="https://github.com/user-attachments/assets/603ed474-c964-447c-912c-2659bb3ff55e" />
+
+<img width="1198" height="832" alt="Screenshot 2026-04-02 132524" src="https://github.com/user-attachments/assets/e06fcd0a-778d-459d-ba0f-1af0bdef0a25" />
+
+<img width="1228" height="851" alt="Screenshot 2026-04-02 132606" src="https://github.com/user-attachments/assets/0cd3ba4e-37ec-4a64-825e-179779bda80a" />
+
+#### SYN Scan
+
+To simulate a SYN scan, I used Nmap from the Windows 11 client and targeted the Suricata VM once again. The packets captured verified multiple SYN packets to various ports.
+
+The packets included:
+- TCP protocol identification
+- Source and destination IPs
+- Multiple different destination ports
+- SYN flag set
+
+<img width="1315" height="858" alt="Screenshot 2026-04-02 133027" src="https://github.com/user-attachments/assets/8c6842be-ac02-4e3f-b6b0-381be7f940c6" />
+
+<img width="1259" height="826" alt="Screenshot 2026-04-02 133228" src="https://github.com/user-attachments/assets/4294bb43-f7c6-4721-b01e-20fd877f9ac6" />
+
+<img width="1266" height="847" alt="Screenshot 2026-04-02 133744" src="https://github.com/user-attachments/assets/4954fbe3-2a86-4479-b1db-096b2ac9b2cc" />
+
+<img width="1304" height="847" alt="Screenshot 2026-04-02 133833" src="https://github.com/user-attachments/assets/6b950561-b7c2-43dd-bccc-8ffdff74f898" />
+
+#### DNS Query
+
+DNS traffic was generated using nslookup from the Windows 11 client. The packets captured show both DNS query and response packets.
+
+The packets included:
+- UDP protocol using port 53
+- Source and destination IPs
+- Domain query for google.com
+- DNS response containing the resolved IP address
+
+<img width="1323" height="858" alt="Screenshot 2026-04-02 134608" src="https://github.com/user-attachments/assets/42bb9885-50f7-4928-997d-7e3be649c046" />
+
+<img width="1302" height="846" alt="Screenshot 2026-04-02 135344" src="https://github.com/user-attachments/assets/610350c7-b4ac-4fce-b136-87ea36fe2700" />
+
+<img width="1269" height="848" alt="Screenshot 2026-04-02 135626" src="https://github.com/user-attachments/assets/94694db3-e1cb-4556-8663-d905baf84a6f" />
+
+<img width="1283" height="853" alt="Screenshot 2026-04-02 135746" src="https://github.com/user-attachments/assets/4231fbdf-e109-484e-8bbb-150842a62bd9" />
+
+<img width="1304" height="858" alt="Screenshot 2026-04-02 135811" src="https://github.com/user-attachments/assets/be16b5a6-f076-48f5-b0b8-74efd2fb2337" />
+
+<img width="1281" height="851" alt="Screenshot 2026-04-02 140000" src="https://github.com/user-attachments/assets/731b2242-a780-4d58-ad3d-3ab923a622cb" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
