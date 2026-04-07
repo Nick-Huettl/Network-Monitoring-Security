@@ -145,19 +145,35 @@ The packets included:
 
 <img width="1281" height="851" alt="Screenshot 2026-04-02 140000" src="https://github.com/user-attachments/assets/731b2242-a780-4d58-ad3d-3ab923a622cb" />
 
+### Forwarding Suricata Logs to Splunk
 
+To centralize logs, I forwarded Suricata alerts to my Splunk SIEM so I could query and investigate all my logs in one location, which also includes my Windows 11 endpoint logs.
 
+<img width="1288" height="838" alt="Screenshot 2026-04-06 131740" src="https://github.com/user-attachments/assets/1d086513-55c9-49af-918c-dd9d2e104a5b" />
 
+<img width="1278" height="824" alt="Screenshot 2026-04-06 132012" src="https://github.com/user-attachments/assets/d0fe8362-95e8-423d-afdd-12adf72c0e69" />
 
+<img width="928" height="390" alt="Screenshot 2026-04-06 132926" src="https://github.com/user-attachments/assets/f8ea7c46-bb00-475e-9bf2-a3e2d371db4f" />
 
+### Validating the Log Forwarding
 
+After installing and setting up the universal forwarder on my Suricata VM, I wanted to validate that the logs were being sent to the SIEM, so I used the same simulated attacks from earlier, including ping, nmap scan, and nslookup.
 
+<img width="995" height="755" alt="Screenshot 2026-04-06 133052" src="https://github.com/user-attachments/assets/e8d7af3a-6850-4460-93d4-8f8c0b6d0034" />
 
+<img width="1188" height="831" alt="Screenshot 2026-04-06 135302" src="https://github.com/user-attachments/assets/78dfa4ae-213c-429d-adbe-840b3f669a39" />
 
+<img width="1147" height="829" alt="Screenshot 2026-04-06 135719" src="https://github.com/user-attachments/assets/d54cb73b-4ed1-4ebb-867d-76e33658ccd3" />
 
+<img width="1193" height="829" alt="Screenshot 2026-04-06 140257" src="https://github.com/user-attachments/assets/226f0163-0eb4-4861-93bc-48611acbd2c0" />
 
+### Lessons Learned
 
+This lab expansion provided valuable hands-on experience with installing and configuring Suricata to monitor internal traffic. I also learned the importance of proper configurations within the Suricata files, including the network interfaces and rule paths, as misconfigurations prevented the IDS from detecting activity.
 
+Additionally, capturing traffic with Wireshark validates the IDS alerts at the packet level, improving my overall understanding of ICMP traffic, network scans using nmap, and DNS queries.
+
+Overall, this project reinforced how different tools, such as IDS, packet analysis, and SIEM integration, work together to create a more secure environment.
 
 
 
